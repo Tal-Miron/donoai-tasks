@@ -1,11 +1,12 @@
 import json
 import logging
 import os
+import asyncio
+from playwright.async_api import async_playwright
 from datetime import datetime
-
 from bs4 import BeautifulSoup
-from playwright.sync_api import TimeoutError as PlaywrightTimeout
-from playwright.sync_api import sync_playwright
+from playwright.async_api import TimeoutError as PlaywrightTimeout
+import time
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -16,6 +17,7 @@ DATE_FORMAT = "%m/%d/%Y, %I:%M:%S %p"
 OUTPUT_PATH = "outputs/seminole_results.json"
 NAME_MIN_LENGTH = 2
 NAME_MAX_LENGTH = 50
+PAGER_NO_CONTENT_LABEL = "0 - 0 of 0"
 
 # ---------------------------------------------------------------------------
 # Parsing helpers
@@ -31,7 +33,6 @@ def parse_names(value: str | None) -> list[str]:
         return []
     return [name.strip().upper() for name in value.split(" ,") if name.strip()]
 
-
 def parse_date(raw: str) -> str | None:
     """Parse a date string from the grid into ISO 8601 format.
     Returns None if the string cannot be parsed.
@@ -42,120 +43,144 @@ def parse_date(raw: str) -> str | None:
         logging.warning(f"Could not parse date: '{raw}'")
         return None
 
-
-def parse_table(html: str) -> list[dict]:
-    """Extract records from the search results grid HTML.
-    Fields not present in the grid (parcel_number, doc_category, etc.)
-    are set to None - they are only available on individual document pages,
-    which this scraper does not retrieve.
+def parse_row(row) -> dict | None:
+    """Parse a single grid row into a record dict.
+    Returns None if the row is invalid or empty
+    Runs as a sync function so it can be dispatched to a thread pool.
     """
-    records = []
+    logging.debug("async - parsing row")
+    
+    #Just for testing:
+    #time.sleep(1)
+    
+    cells = row.find_all("td", {"role": "gridcell"})
+    if not cells:
+        return None
+
+    # Map aria-describedby attribute (column ID) → cell text
+    data = {
+        cell.get("aria-describedby"): cell.text.strip()
+        for cell in cells
+    }
+
+    if not data.get("grid_inst_num"):
+        return None
+
+    return {
+        "instrument_number":  data.get("grid_inst_num"),
+        "book":               data.get("grid_book_reel"),
+        "page":               data.get("grid_page"),
+        "doc_type":           data.get("grid_instrument_type"),
+        "date":               parse_date(data.get("grid_file_date", "")),
+        "grantors":           parse_names(data.get("grid_party_name")),
+        "grantees":           parse_names(data.get("grid_cross_party_name")),
+        # Not available in the search results grid
+        "parcel_number":      None,
+        "county":             "seminole",
+        "state":              "FL",
+        "doc_category":       None,
+        "original_doc_type":  None,
+        "book_type":          None,
+        "consideration":      None,
+    }
+
+async def parse_table(html: str) -> list[dict]:
+    """Extract records from the search results grid HTML.
+    Parses all rows concurrently using thread pool.
+    """
     soup = BeautifulSoup(html, "html.parser")
+    rows = soup.find_all("tr", {"role": "row"})
 
-    for row in soup.find_all("tr", {"role": "row"}):
-        cells = row.find_all("td", {"role": "gridcell"})
-        if not cells:
-            continue
+    # parse every row in its own thread
+    results = await asyncio.gather(*[
+        asyncio.to_thread(parse_row, row) for row in rows
+    ])
 
-        # Map aria-describedby attribute (column ID) → cell text
-        data = {
-            cell.get("aria-describedby"): cell.text.strip()
-            for cell in cells
-        }
-
-        if not data.get("grid_inst_num"):
-            continue
-
-        records.append({
-            "instrument_number":  data.get("grid_inst_num"),
-            "book":               data.get("grid_book_reel"),
-            "page":               data.get("grid_page"),
-            "doc_type":           data.get("grid_instrument_type"),
-            "date":               parse_date(data.get("grid_file_date", "")),
-            "grantors":           parse_names(data.get("grid_party_name")),
-            "grantees":           parse_names(data.get("grid_cross_party_name")),
-            # Not available in the search results grid
-            "parcel_number":      None,
-            "county":             "seminole",
-            "state":              "FL",
-            "doc_category":       None,
-            "original_doc_type":  None,
-            "book_type":          None,
-            "consideration":      None,
-        })
-
-    return records
+    parsed = [r for r in results if r is not None]
+    logging.debug(f"async - Parsed {len(parsed)} records from page")
+    return parsed
 
 # ---------------------------------------------------------------------------
 # Scraper
 # ---------------------------------------------------------------------------
 
-def scrape(name: str) -> list[dict]:
+async def scrape(name: str):
     """Searches the Seminole County recording system and return all matching records.
-    Args:
-        name: Validated, uppercased name to search for.
-    Returns:
-        List of record dicts. Returns an empty list on error or no results.
+    gets name to search for- Validated & Uppercased
+    Returns a list of record dicts. 
+    Returns an empty list on error or no result.
     """
     result = []
 
-    with sync_playwright() as p:
+    async with async_playwright() as p:
         browser = None
         try:
-            browser = p.chromium.launch(headless=False, slow_mo=500)
-            page = browser.new_page()
+            browser = await p.chromium.launch(headless=False, slow_mo=500)
+            page = await browser.new_page()
             page.set_default_timeout(300_000)  # 5 minutes
 
-            # --- Navigate ---
+            #Navigate
             try:
-                page.goto(URL)
-                page.wait_for_load_state("networkidle")
+                await page.goto(URL)
+                await page.wait_for_load_state("networkidle")
                 logging.info("Page loaded")
             except PlaywrightTimeout:
                 logging.error("Timed out waiting for page to load")
                 return []
 
-            # --- Accept disclaimer & submit search ---
-            page.click("text=Agreed & Enter")
-            logging.debug("Accepted disclaimer")
-            page.fill("#criteria_full_name", name)
-            page.locator("a.btn.btn-success.w-40").filter(has_text="Search").nth(0).click()
+            #Accept disclaimer
+            await page.click("text=Agreed & Enter")
+            logging.info("Accepted disclaimer")
+
+            #Search
+            await page.fill("#criteria_full_name", name)
+            await page.locator("a.btn.btn-success.w-40").filter(has_text="Search").nth(0).click()
             logging.info(f"Starting to search for: '{name}'")
 
+            #Wait for table to load
             try:
-                page.wait_for_selector("img[src*='loading_small']", state="hidden")
+                logging.info("Waitig for table to load")
+                await page.wait_for_selector("img[src*='loading_small']", state="hidden")
             except PlaywrightTimeout:
                 logging.error("Timed out waiting for results table to load")
                 return []
 
-            # --- Check for empty results ---
-            pager_label = page.locator("#grid_pager_label").inner_text()
-            if "0 - 0 of 0" in pager_label:
+            #Check for empty results
+            pager_label = await page.locator("#grid_pager_label").inner_text()
+            if PAGER_NO_CONTENT_LABEL in pager_label:
                 logging.info(f"No results found for '{name}'")
                 return []
 
-            # --- Set page size to maximum (list item 4 = largest option) ---
-            page.click("#grid_editor_dropDownButton")
-            page.wait_for_selector("#grid_editor_list_item_4", state="visible")
-            page.click("#grid_editor_list_item_4")
-            page.wait_for_timeout(1000)
-            logging.info("Expanded table for optimized search")
+            await table_size_to_max(page)
+            
+            #Paginate and collect
+            # Fire off parse tasks immediately
+            # navigate to the next page straight away
+            # Collect all results at the end
 
-            # --- Paginate and collect ---
-            while True:
-                result.extend(parse_table(page.content()))
-                logging.debug(f"Parsed {len(result)} records from current page")
-
+            tasks = []
+            page_num = 1
+            
+            
+            while True: #change that!
+                logging.info(f"Scraping page {page_num}")
+                html = await page.content()
+                tasks.append(asyncio.create_task(parse_table(html)))
+                
                 next_span = page.locator(
                     ".ui-iggrid-nextpagelabel, .ui-iggrid-nextpagelabeldisabled"
                 )
-                if "ui-iggrid-nextpagelabeldisabled" in next_span.get_attribute("class"):
+
+                if "ui-iggrid-nextpagelabeldisabled" in await next_span.get_attribute("class"):
                     break
 
-                page.click(".ui-iggrid-nextpage")
-                page.wait_for_selector("td[role='gridcell']")
-                logging.info("Scraping next page")
-                page.wait_for_timeout(500)
+                await navigate_next(page)
+                page_num += 1
+
+            # When all pages navigated collect all parse task results
+            for parsed in await asyncio.gather(*tasks):
+                result.extend(parsed)
+                logging.debug(f"In Total - Parsed {len(result)} records from current page")                
 
         except Exception:
             logging.exception("Unexpected error during scrape")
@@ -167,6 +192,24 @@ def scrape(name: str) -> list[dict]:
 
     logging.info(f"Total records found: {len(result)}")
     return result
+
+# ---------------------------------------------------------------------------
+# Navigation helper
+# ---------------------------------------------------------------------------
+
+async def table_size_to_max(page):
+    #Set page size to maximum (list item 4 = largest option)
+    await page.click("#grid_editor_dropDownButton")
+    await page.wait_for_selector("#grid_editor_list_item_4", state="visible")
+    await page.click("#grid_editor_list_item_4")
+    await page.wait_for_timeout(1000)# change that!
+    logging.info("Expanded table for optimized search")
+
+async def navigate_next(page):
+    """Clicks to the next table page and waits for the grid to re-render."""
+    await page.click(".ui-iggrid-nextpage")
+    await page.wait_for_selector("td[role='gridcell']")
+    await page.wait_for_timeout(500) # somthing else here!
 
 # ---------------------------------------------------------------------------
 # Input validation
@@ -192,8 +235,8 @@ def validate_name(value: str) -> str:
 # Entry point
 # ---------------------------------------------------------------------------
 
-def main() -> None:
-    logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+async def main():
+    logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
 
     try:
         raw_name = input("Enter name to search: ")
@@ -202,7 +245,7 @@ def main() -> None:
         raise SystemExit(f"Invalid input: {e}")
 
     print(f"Searching for: {name}")
-    result = scrape(name)
+    result = await scrape(name)
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w") as f:
@@ -212,4 +255,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
