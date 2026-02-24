@@ -129,12 +129,12 @@ async def scrape(name: str):
                 return []
 
             #Accept disclaimer
-            await page.click("text=Agreed & Enter")
+            await page.get_by_text("Agreed & Enter").click()
             logging.info("Accepted disclaimer")
 
             #Search
-            await page.fill("#criteria_full_name", name)
-            await page.locator("a.btn.btn-success.w-40").filter(has_text="Search").nth(0).click()
+            await page.get_by_role("textbox", name="Name (lastname, firstname)").fill(name)
+            await page.get_by_text("Search").nth(1).click()
             logging.info(f"Starting to search for: '{name}'")
 
             #Wait for table to load
@@ -166,7 +166,6 @@ async def scrape(name: str):
                 logging.info(f"Scraping page {page_num}")
                 html = await page.content()
                 tasks.append(asyncio.create_task(parse_table(html)))
-                
                 next_span = page.locator(
                     ".ui-iggrid-nextpagelabel, .ui-iggrid-nextpagelabeldisabled"
                 )
@@ -198,18 +197,35 @@ async def scrape(name: str):
 # ---------------------------------------------------------------------------
 
 async def table_size_to_max(page):
-    #Set page size to maximum (list item 4 = largest option)
-    await page.click("#grid_editor_dropDownButton")
-    await page.wait_for_selector("#grid_editor_list_item_4", state="visible")
-    await page.click("#grid_editor_list_item_4")
-    await page.wait_for_timeout(1000)# change that!
+    #Set page size to maximum
+
+    old_label = await page.locator("#grid_pager_label").inner_text()
+
+    await page.locator("#grid_editor_dropDownButton").click()
+    option = page.get_by_role("option", name="60")
+    await option.wait_for(state="visible")
+    await option.click()
+    
+    # wait until pager label changes, confirms table has rerendered
+    await page.wait_for_function(
+        f"document.querySelector('#grid_pager_label').innerText !== '{old_label}'"
+    )
+
     logging.info("Expanded table for optimized search")
 
 async def navigate_next(page):
     """Clicks to the next table page and waits for the grid to re-render."""
-    await page.click(".ui-iggrid-nextpage")
+
+    old_label = await page.locator("#grid_pager_label").inner_text()
+
+    await page.get_by_text("Next", exact=True).click()
     await page.wait_for_selector("td[role='gridcell']")
-    await page.wait_for_timeout(500) # somthing else here!
+    
+    # wait until pager label changes, confirms table has rerendered
+    await page.wait_for_function(
+        f"document.querySelector('#grid_pager_label').innerText !== '{old_label}'"
+    )
+    logging.info("Cliked on next page")
 
 # ---------------------------------------------------------------------------
 # Input validation
