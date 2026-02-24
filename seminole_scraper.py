@@ -262,7 +262,10 @@ async def main():
         raise SystemExit(f"Invalid input: {e}")
 
     print(f"Searching for: {name}")
+    start = time.perf_counter()
     result = await scrape(name)
+    elapsed = round(time.perf_counter() - start, 2)
+    print(f"Done - {len(result)} record(s) in {elapsed}s written to {OUTPUT_PATH}")
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w") as f:
