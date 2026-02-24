@@ -117,7 +117,7 @@ async def scrape(name: str):
         try:
             browser = await p.chromium.launch(headless=False, slow_mo=500)
             page = await browser.new_page()
-            page.set_default_timeout(300_000)  # 5 minutes
+            page.set_default_timeout(120000)  # 2 minutes
 
             #Navigate
             try:
@@ -160,9 +160,9 @@ async def scrape(name: str):
 
             tasks = []
             page_num = 1
+            has_next_page = True
             
-            
-            while True: #change that!
+            while has_next_page:
                 logging.info(f"Scraping page {page_num}")
                 html = await page.content()
                 tasks.append(asyncio.create_task(parse_table(html)))
@@ -170,12 +170,12 @@ async def scrape(name: str):
                     ".ui-iggrid-nextpagelabel, .ui-iggrid-nextpagelabeldisabled"
                 )
 
-                if "ui-iggrid-nextpagelabeldisabled" in await next_span.get_attribute("class"):
-                    break
+                has_next_page = "ui-iggrid-nextpagelabeldisabled" not in await next_span.get_attribute("class")
 
-                await navigate_next(page)
-                page_num += 1
-
+                if has_next_page:
+                    await navigate_next(page)
+                    page_num += 1
+            
             # When all pages navigated collect all parse task results
             for parsed in await asyncio.gather(*tasks):
                 result.extend(parsed)
