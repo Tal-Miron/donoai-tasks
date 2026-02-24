@@ -4,6 +4,10 @@ import logging
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
 import json
 
+def parse_names(value: str | None) -> list[str]:
+    if not value:
+        return []
+    return [name.strip() for name in value.split(" ,") if name.strip()]
 
 def parse_table(page) -> list:
     records = []
@@ -44,8 +48,8 @@ def parse_table(page) -> list:
             "page": data.get("grid_page", None),
             "doc_type": data.get("grid_instrument_type", None),
             "date": iso_date,
-            "grantors": data.get("grid_party_name", None),
-            "grantees": data.get("grid_cross_party_name", None),
+            "grantors": parse_names(data.get("grid_party_name")),
+            "grantees": parse_names(data.get("grid_cross_party_name")),
             # fields not in table
             "parcel_number": None,
             "county": "seminole",
@@ -127,10 +131,31 @@ def scrape(name) -> list:
     logging.info(f"Total records found: {len(result)}")
     return result
 
+def validate_name(value) -> str:
+    value = value.strip()
+
+    if not value:
+        raise ValueError("Name cannot be empty")
+
+    if len(value) < 2:
+        raise ValueError("Name must be at least 2 characters long")
+
+    if len(value) > 50:
+        raise ValueError("Name is too long (max 50 characters)")
+
+    return value.upper()
+
+
 def main():
 
-    result = scrape("TAL")
-
+    try:
+            raw_name = input("Enter name to search: ")
+            name = validate_name(raw_name)
+            print(f"Searching for: {name}")
+    except ValueError as e:
+        raise SystemExit(f"Error: {e}")
+    
+    result = scrape(name)
     with open("outputs/seminole_results.json", "w") as f:
         json.dump(result, f, indent=2)
 
