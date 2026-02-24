@@ -1,0 +1,2322 @@
+{
+  "wake": {
+    "record_count": 2473,
+    "instrument_patterns": [
+      {
+        "pattern": "\\d{6}-\\d{5}",
+        "regex": "^\\d{6}-\\d{5}$",
+        "example": "007906-00369",
+        "count": 2211,
+        "percentage": 89.41
+      },
+      {
+        "pattern": "\\u{2}\\d{4}-\\d{5}",
+        "regex": "^\\u{2}\\d{4}-\\d{5}$",
+        "example": "BM2003-01124",
+        "count": 124,
+        "percentage": 5.01
+      },
+      {
+        "pattern": "\\d{10}",
+        "regex": "^\\d{10}$",
+        "example": "2025010211",
+        "count": 68,
+        "percentage": 2.75
+      },
+      {
+        "pattern": "\\d{2}\\u{1}\\d{3}-\\d{5}",
+        "regex": "^\\d{2}\\u{1}\\d{3}-\\d{5}$",
+        "example": "00R931-00642",
+        "count": 19,
+        "percentage": 0.77
+      },
+      {
+        "pattern": "\\l{2}\\d{11}",
+        "regex": "^\\l{2}\\d{11}$",
+        "example": "bp01661801624",
+        "count": 17,
+        "percentage": 0.69
+      },
+      {
+        "pattern": "\\l{2}\\d{7}",
+        "regex": "^\\l{2}\\d{7}$",
+        "example": "bp2542233",
+        "count": 9,
+        "percentage": 0.36
+      },
+      {
+        "pattern": "\\l{2}\\d{8}",
+        "regex": "^\\l{2}\\d{8}$",
+        "example": "bp82631712",
+        "count": 4,
+        "percentage": 0.16
+      },
+      {
+        "pattern": "\\u{2}\\d{6}\\u{2}\\d{5}",
+        "regex": "^\\u{2}\\d{6}\\u{2}\\d{5}$",
+        "example": "BK016421PG01444",
+        "count": 3,
+        "percentage": 0.12
+      },
+      {
+        "pattern": "\\l{2}\\d{6}",
+        "regex": "^\\l{2}\\d{6}$",
+        "example": "bp857396",
+        "count": 3,
+        "percentage": 0.12
+      },
+      {
+        "pattern": "\\d{11}\\u{1}",
+        "regex": "^\\d{11}\\u{1}$",
+        "example": "20240091880F",
+        "count": 2,
+        "percentage": 0.08
+      },
+      {
+        "pattern": "\\u{4}\\d{4}\\u{2}\\d{5}",
+        "regex": "^\\u{4}\\d{4}\\u{2}\\d{5}$",
+        "example": "BKBM2015PG01104",
+        "count": 2,
+        "percentage": 0.08
+      },
+      {
+        "pattern": "\\l{2}\\u{2}\\d{8}",
+        "regex": "^\\l{2}\\u{2}\\d{8}$",
+        "example": "bpBM19911092",
+        "count": 2,
+        "percentage": 0.08
+      },
+      {
+        "pattern": "\\l{2}\\d{9}",
+        "regex": "^\\l{2}\\d{9}$",
+        "example": "bp142721621",
+        "count": 2,
+        "percentage": 0.08
+      },
+      {
+        "pattern": "\\u{2}\\d{4}-\\d{4}\\u{1}",
+        "regex": "^\\u{2}\\d{4}-\\d{4}\\u{1}$",
+        "example": "GR1987-0002A",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\d{4}\\u{2}\\d{5}",
+        "regex": "^\\d{4}\\u{2}\\d{5}$",
+        "example": "1972PG00086",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\l{2}\\u{2}\\d{9}",
+        "regex": "^\\l{2}\\u{2}\\d{9}$",
+        "example": "bpBM202101482",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\l{2}\\u{4}\\d{5}",
+        "regex": "^\\l{2}\\u{4}\\d{5}$",
+        "example": "bpCORP11346",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\l{2}\\u{2}\\d{6}",
+        "regex": "^\\l{2}\\u{2}\\d{6}$",
+        "example": "bpBM199825",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\d{7}",
+        "regex": "^\\d{7}$",
+        "example": "3095421",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\d{8}",
+        "regex": "^\\d{8}$",
+        "example": "68979544",
+        "count": 1,
+        "percentage": 0.04
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{5}",
+        "regex": "^\\d{5}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{4}",
+            "count": 963
+          },
+          {
+            "pattern": "\\d{3}",
+            "count": 490
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 44
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 3
+          }
+        ],
+        "page_min": 1,
+        "page_max": 2796
+      },
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 559
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 154
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 58
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 5
+          }
+        ],
+        "page_min": 2,
+        "page_max": 2751
+      },
+      {
+        "pattern": "\\u{2}\\d{4}",
+        "regex": "^\\u{2}\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{4}",
+            "count": 73
+          },
+          {
+            "pattern": "\\d{3}",
+            "count": 52
+          },
+          {
+            "pattern": "\\d{5}",
+            "count": 2
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 2
+          },
+          {
+            "pattern": "\\d{1}\\u{1}",
+            "count": 1
+          }
+        ],
+        "page_min": 25,
+        "page_max": 2644
+      },
+      {
+        "pattern": "\\d{6}",
+        "regex": "^\\d{6}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{5}",
+            "count": 22
+          }
+        ],
+        "page_min": 1,
+        "page_max": 2611
+      },
+      {
+        "pattern": "\\u{1}\\d{3}",
+        "regex": "^\\u{1}\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{4}",
+            "count": 16
+          },
+          {
+            "pattern": "\\d{3}",
+            "count": 3
+          }
+        ],
+        "page_min": 261,
+        "page_max": 8629
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 12
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 1
+          }
+        ],
+        "page_min": 87,
+        "page_max": 792
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 2
+          }
+        ],
+        "page_min": 584,
+        "page_max": 787
+      },
+      {
+        "pattern": "\\d{4} \\u{1}\\l{2}.\\d{1}",
+        "regex": "^\\d{4} \\u{1}\\l{2}.\\d{1}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 1
+          }
+        ],
+        "page_min": 86,
+        "page_max": 86
+      },
+      {
+        "pattern": "\\u{4}\\d{2}",
+        "regex": "^\\u{4}\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 1
+          }
+        ],
+        "page_min": 346,
+        "page_max": 346
+      },
+      {
+        "pattern": "",
+        "regex": "^$",
+        "page_patterns": [],
+        "page_min": null,
+        "page_max": null
+      }
+    ],
+    "date_range": {
+      "earliest": "1970-04-30",
+      "latest": "2025-11-13",
+      "anomalies": [
+        "1490-11-12",
+        "2098-09-05",
+        "2115-02-09"
+      ]
+    },
+    "doc_type_distribution": {
+      "DEED": 940,
+      "DEED OF TRUST": 394,
+      "SATISFACTION": 148,
+      "RELEASE": 143,
+      "MAP PLAT": 124,
+      "PARTIAL RELEASE": 91,
+      "CANCELLATION": 89,
+      "CERTIFICATE OF SATISFACTION": 68,
+      "REQUEST NOTICE": 42,
+      "POWER OF ATTORNEY": 40
+    },
+    "unique_doc_types": 71
+  },
+  "davidson": {
+    "record_count": 23,
+    "instrument_patterns": [
+      {
+        "pattern": "\\d{13}",
+        "regex": "^\\d{13}$",
+        "example": "2008900870986",
+        "count": 19,
+        "percentage": 82.61
+      },
+      {
+        "pattern": "\\d{10}",
+        "regex": "^\\d{10}$",
+        "example": "2025004839",
+        "count": 3,
+        "percentage": 13.04
+      },
+      {
+        "pattern": "\\l{2}\\d{3}",
+        "regex": "^\\l{2}\\d{3}$",
+        "example": "bp512",
+        "count": 1,
+        "percentage": 4.35
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 9
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 6
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 2
+          }
+        ],
+        "page_min": 39,
+        "page_max": 2289
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 4
+          }
+        ],
+        "page_min": 191,
+        "page_max": 933
+      },
+      {
+        "pattern": "\\d{1}",
+        "regex": "^\\d{1}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 1
+          }
+        ],
+        "page_min": 12,
+        "page_max": 12
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 1
+          }
+        ],
+        "page_min": 47,
+        "page_max": 47
+      }
+    ],
+    "date_range": {
+      "earliest": "2000-05-18",
+      "latest": "2025-06-18",
+      "anomalies": []
+    },
+    "doc_type_distribution": {
+      "DEED": 6,
+      "DE": 5,
+      "SAT": 3,
+      "D/T": 3,
+      "LIEN": 1,
+      "Plat": 1,
+      "PLAT": 1,
+      "CAN/LIEN": 1,
+      "DEED OF TRUST": 1,
+      "SATISFACTION": 1
+    },
+    "unique_doc_types": 10
+  },
+  "alamance": {
+    "record_count": 89,
+    "instrument_patterns": [
+      {
+        "pattern": "\\l{2}\\d{7}",
+        "regex": "^\\l{2}\\d{7}$",
+        "example": "bp3806974",
+        "count": 38,
+        "percentage": 42.7
+      },
+      {
+        "pattern": "\\d{5}",
+        "regex": "^\\d{5}$",
+        "example": "18785",
+        "count": 14,
+        "percentage": 15.73
+      },
+      {
+        "pattern": "\\l{2}\\d{6}",
+        "regex": "^\\l{2}\\d{6}$",
+        "example": "bp499749",
+        "count": 12,
+        "percentage": 13.48
+      },
+      {
+        "pattern": "\\l{2}\\d{8}",
+        "regex": "^\\l{2}\\d{8}$",
+        "example": "bp34356662",
+        "count": 7,
+        "percentage": 7.87
+      },
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "example": "2144",
+        "count": 6,
+        "percentage": 6.74
+      },
+      {
+        "pattern": "\\d{12}",
+        "regex": "^\\d{12}$",
+        "example": "009623500002",
+        "count": 3,
+        "percentage": 3.37
+      },
+      {
+        "pattern": "\\l{2}\\d{4}",
+        "regex": "^\\l{2}\\d{4}$",
+        "example": "bp1850",
+        "count": 2,
+        "percentage": 2.25
+      },
+      {
+        "pattern": "\\l{2}\\d{5}",
+        "regex": "^\\l{2}\\d{5}$",
+        "example": "bp16758",
+        "count": 2,
+        "percentage": 2.25
+      },
+      {
+        "pattern": "\\d{6}-\\d{6}/\\d{6} \\l{1}\\d{1}",
+        "regex": "^\\d{6}-\\d{6}/\\d{6} \\l{1}\\d{1}$",
+        "example": "035528-000012/153082 v2",
+        "count": 1,
+        "percentage": 1.12
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "example": "107",
+        "count": 1,
+        "percentage": 1.12
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "example": "59",
+        "count": 1,
+        "percentage": 1.12
+      },
+      {
+        "pattern": "\\d{6}",
+        "regex": "^\\d{6}$",
+        "example": "108376",
+        "count": 1,
+        "percentage": 1.12
+      },
+      {
+        "pattern": "\\l{2}\\d{11}",
+        "regex": "^\\l{2}\\d{11}$",
+        "example": "bp67770123565",
+        "count": 1,
+        "percentage": 1.12
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 53
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 7
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 5
+          }
+        ],
+        "page_min": 11,
+        "page_max": 908
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 11
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 1
+          }
+        ],
+        "page_min": 58,
+        "page_max": 917
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 3
+          },
+          {
+            "pattern": "\\d{3}",
+            "count": 2
+          }
+        ],
+        "page_min": 12,
+        "page_max": 135
+      },
+      {
+        "pattern": "",
+        "regex": "^$",
+        "page_patterns": [],
+        "page_min": null,
+        "page_max": null
+      }
+    ],
+    "date_range": {
+      "earliest": "1973-01-25",
+      "latest": "2025-10-20",
+      "anomalies": [
+        "2065-10-28"
+      ]
+    },
+    "doc_type_distribution": {
+      "DEED": 17,
+      "Deed of Trust": 11,
+      "D T": 6,
+      "Plat": 4,
+      "Easement": 4,
+      "Assignment of Deed of Trust": 4,
+      "Special Warranty Deed": 3,
+      "General Warranty Deed": 3,
+      "CANCEL": 3,
+      "Substitution of Trustee": 3
+    },
+    "unique_doc_types": 33
+  },
+  "cumberland": {
+    "record_count": 2479,
+    "instrument_patterns": [
+      {
+        "pattern": "\\d{4}-\\d{5}",
+        "regex": "^\\d{4}-\\d{5}$",
+        "example": "2021-58109",
+        "count": 2336,
+        "percentage": 94.23
+      },
+      {
+        "pattern": "\\l{2}\\d{7}",
+        "regex": "^\\l{2}\\d{7}$",
+        "example": "bp3523723",
+        "count": 53,
+        "percentage": 2.14
+      },
+      {
+        "pattern": "\\d{5}",
+        "regex": "^\\d{5}$",
+        "example": "14974",
+        "count": 29,
+        "percentage": 1.17
+      },
+      {
+        "pattern": "\\l{2}\\d{8}",
+        "regex": "^\\l{2}\\d{8}$",
+        "example": "bp11965112",
+        "count": 28,
+        "percentage": 1.13
+      },
+      {
+        "pattern": "\\l{2}\\d{6}",
+        "regex": "^\\l{2}\\d{6}$",
+        "example": "bp339753",
+        "count": 8,
+        "percentage": 0.32
+      },
+      {
+        "pattern": "\\l{2}\\d{4}",
+        "regex": "^\\l{2}\\d{4}$",
+        "example": "bp4835",
+        "count": 7,
+        "percentage": 0.28
+      },
+      {
+        "pattern": "\\l{2}\\d{9}",
+        "regex": "^\\l{2}\\d{9}$",
+        "example": "bp110710269",
+        "count": 3,
+        "percentage": 0.12
+      },
+      {
+        "pattern": "\\l{2}\\d{5}",
+        "regex": "^\\l{2}\\d{5}$",
+        "example": "bp81165",
+        "count": 3,
+        "percentage": 0.12
+      },
+      {
+        "pattern": "\\d{10}",
+        "regex": "^\\d{10}$",
+        "example": "1230024332",
+        "count": 2,
+        "percentage": 0.08
+      },
+      {
+        "pattern": "\\d{11}\\u{1}",
+        "regex": "^\\d{11}\\u{1}$",
+        "example": "20220173191K",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\u{2}\\d{4}\\u{2}\\d{3}",
+        "regex": "^\\u{2}\\d{4}\\u{2}\\d{3}$",
+        "example": "BK7242PG572",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\d{4}-\\d{8}",
+        "regex": "^\\d{4}-\\d{8}$",
+        "example": "1961-08660187",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\l{2}\\d{2}-\\d{6}",
+        "regex": "^\\l{2}\\d{2}-\\d{6}$",
+        "example": "bp33-300624",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\d{8}/",
+        "regex": "^\\d{8}/$",
+        "example": "19671015/",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\l{2}\\u{2}",
+        "regex": "^\\l{2}\\u{2}$",
+        "example": "bpAM",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\u{2} \\d{4}\\u{2}\\d{4}",
+        "regex": "^\\u{2} \\d{4}\\u{2}\\d{4}$",
+        "example": "BK 3592PG0595",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\l{2}\\d{2}",
+        "regex": "^\\l{2}\\d{2}$",
+        "example": "bp96",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\d{4}-\\d{4}\\u{1}",
+        "regex": "^\\d{4}-\\d{4}\\u{1}$",
+        "example": "1986-7388J",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\u{2}\\d{4}\\u{2}\\d{4}",
+        "regex": "^\\u{2}\\d{4}\\u{2}\\d{4}$",
+        "example": "BK4630PG0547",
+        "count": 1,
+        "percentage": 0.04
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 1397
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 159
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 21
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 21
+          },
+          {
+            "pattern": "\\d{5}",
+            "count": 1
+          }
+        ],
+        "page_min": 1,
+        "page_max": 60352
+      },
+      {
+        "pattern": "\\d{5}",
+        "regex": "^\\d{5}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 622
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 87
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 32
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 15
+          }
+        ],
+        "page_min": 1,
+        "page_max": 897
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 60
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 38
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 2
+          }
+        ],
+        "page_min": 1,
+        "page_max": 581
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 15
+          },
+          {
+            "pattern": "\\d{3}",
+            "count": 5
+          }
+        ],
+        "page_min": 18,
+        "page_max": 165
+      },
+      {
+        "pattern": "\\d{2}-\\d{4}",
+        "regex": "^\\d{2}-\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 1
+          }
+        ],
+        "page_min": 24,
+        "page_max": 24
+      },
+      {
+        "pattern": "\\u{1}",
+        "regex": "^\\u{1}$",
+        "page_patterns": [
+          {
+            "pattern": "\\u{1}",
+            "count": 1
+          }
+        ],
+        "page_min": null,
+        "page_max": null
+      },
+      {
+        "pattern": "\\d{1}",
+        "regex": "^\\d{1}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{1}",
+            "count": 1
+          }
+        ],
+        "page_min": 6,
+        "page_max": 6
+      },
+      {
+        "pattern": "",
+        "regex": "^$",
+        "page_patterns": [],
+        "page_min": null,
+        "page_max": null
+      }
+    ],
+    "date_range": {
+      "earliest": "1970-06-07",
+      "latest": "2025-10-27",
+      "anomalies": [
+        "0050-09-22",
+        "0302-08-13",
+        "1312-11-25",
+        "1396-09-03",
+        "2057-08-11",
+        "2158-11-30",
+        "2238-04-25"
+      ]
+    },
+    "doc_type_distribution": {
+      "DEED": 1192,
+      "DT": 250,
+      "SAT": 102,
+      "D T": 95,
+      "SUB TR": 76,
+      "CAN": 67,
+      "REL D": 65,
+      "PLAT": 54,
+      "ESMT": 52,
+      "TRS D": 37
+    },
+    "unique_doc_types": 100
+  },
+  "mecklenburg": {
+    "record_count": 2490,
+    "instrument_patterns": [
+      {
+        "pattern": "\\d{10}",
+        "regex": "^\\d{10}$",
+        "example": "2025092523",
+        "count": 2224,
+        "percentage": 89.32
+      },
+      {
+        "pattern": "\\d{8}",
+        "regex": "^\\d{8}$",
+        "example": "98142193",
+        "count": 177,
+        "percentage": 7.11
+      },
+      {
+        "pattern": "\\l{2}\\d{8}",
+        "regex": "^\\l{2}\\d{8}$",
+        "example": "bp21349871",
+        "count": 30,
+        "percentage": 1.2
+      },
+      {
+        "pattern": "\\l{2}\\d{7}",
+        "regex": "^\\l{2}\\d{7}$",
+        "example": "bp7576335",
+        "count": 23,
+        "percentage": 0.92
+      },
+      {
+        "pattern": "\\l{2}\\d{5}",
+        "regex": "^\\l{2}\\d{5}$",
+        "example": "bp26120",
+        "count": 13,
+        "percentage": 0.52
+      },
+      {
+        "pattern": "\\l{2}\\d{9}",
+        "regex": "^\\l{2}\\d{9}$",
+        "example": "bp065540792",
+        "count": 9,
+        "percentage": 0.36
+      },
+      {
+        "pattern": "\\l{2}\\d{6}",
+        "regex": "^\\l{2}\\d{6}$",
+        "example": "bp522361",
+        "count": 5,
+        "percentage": 0.2
+      },
+      {
+        "pattern": "\\l{2}\\d{4}",
+        "regex": "^\\l{2}\\d{4}$",
+        "example": "bp1153",
+        "count": 4,
+        "percentage": 0.16
+      },
+      {
+        "pattern": "\\d{11}\\u{1}",
+        "regex": "^\\d{11}\\u{1}$",
+        "example": "20200074287C",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\u{2}\\d{2}-\\d{3}",
+        "regex": "^\\u{2}\\d{2}-\\d{3}$",
+        "example": "RD98-598",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\d{6}",
+        "regex": "^\\d{6}$",
+        "example": "017290",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\d{7}",
+        "regex": "^\\d{7}$",
+        "example": "2003199",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\l{2}\\d{3}",
+        "regex": "^\\l{2}\\d{3}$",
+        "example": "bp333",
+        "count": 1,
+        "percentage": 0.04
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{5}",
+        "regex": "^\\d{5}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 1460
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 158
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 17
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 10
+          },
+          {
+            "pattern": "\\d{6}",
+            "count": 1
+          }
+        ],
+        "page_min": 1,
+        "page_max": 914914
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 415
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 59
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 2
+          }
+        ],
+        "page_min": 3,
+        "page_max": 995
+      },
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 289
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 38
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 4
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 4
+          },
+          {
+            "pattern": "\\d{6}",
+            "count": 1
+          }
+        ],
+        "page_min": 1,
+        "page_max": 574574
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 16
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 1
+          }
+        ],
+        "page_min": 1,
+        "page_max": 960
+      },
+      {
+        "pattern": "\\d{1}",
+        "regex": "^\\d{1}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 3
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 2
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 1
+          }
+        ],
+        "page_min": 33,
+        "page_max": 2676
+      },
+      {
+        "pattern": "\\u{4} \\d{3}",
+        "regex": "^\\u{4} \\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 1
+          }
+        ],
+        "page_min": 190,
+        "page_max": 190
+      },
+      {
+        "pattern": "",
+        "regex": "^$",
+        "page_patterns": [],
+        "page_min": null,
+        "page_max": null
+      }
+    ],
+    "date_range": {
+      "earliest": "1972-04-05",
+      "latest": "2025-12-03",
+      "anomalies": []
+    },
+    "doc_type_distribution": {
+      "DEED": 437,
+      "DEED OF TRUST": 397,
+      "MAP": 250,
+      "MAP/R": 205,
+      "SATISFACTION - CERTIFICATE OF": 119,
+      "COMMISSIONERS DEED": 101,
+      "FORECLOSURE": 94,
+      "SUBSTITUTION TRUSTEE": 74,
+      "CAN": 71,
+      "TRUSTEES DEED": 62
+    },
+    "unique_doc_types": 115
+  },
+  "durham": {
+    "record_count": 491,
+    "instrument_patterns": [
+      {
+        "pattern": "\\d{10}",
+        "regex": "^\\d{10}$",
+        "example": "2025148012",
+        "count": 462,
+        "percentage": 94.09
+      },
+      {
+        "pattern": "\\d{8}",
+        "regex": "^\\d{8}$",
+        "example": "91014911",
+        "count": 17,
+        "percentage": 3.46
+      },
+      {
+        "pattern": "\\l{2}\\d{6}",
+        "regex": "^\\l{2}\\d{6}$",
+        "example": "bp186281",
+        "count": 7,
+        "percentage": 1.43
+      },
+      {
+        "pattern": "\\l{2}\\d{7}",
+        "regex": "^\\l{2}\\d{7}$",
+        "example": "bp6024262",
+        "count": 2,
+        "percentage": 0.41
+      },
+      {
+        "pattern": "\\l{2}\\d{10}",
+        "regex": "^\\l{2}\\d{10}$",
+        "example": "bp1952002679",
+        "count": 1,
+        "percentage": 0.2
+      },
+      {
+        "pattern": "\\l{2}\\d{4}",
+        "regex": "^\\l{2}\\d{4}$",
+        "example": "bp4174",
+        "count": 1,
+        "percentage": 0.2
+      },
+      {
+        "pattern": "\\l{2}\\d{6}-\\d{3}",
+        "regex": "^\\l{2}\\d{6}-\\d{3}$",
+        "example": "bp142190-192",
+        "count": 1,
+        "percentage": 0.2
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{5}",
+        "regex": "^\\d{5}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 224
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 23
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 3
+          }
+        ],
+        "page_min": 3,
+        "page_max": 999
+      },
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 149
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 16
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 4
+          }
+        ],
+        "page_min": 1,
+        "page_max": 995
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 36
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 27
+          },
+          {
+            "pattern": "\\d{3}-\\d{3}",
+            "count": 1
+          }
+        ],
+        "page_min": 33,
+        "page_max": 697
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 4
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 1
+          }
+        ],
+        "page_min": 9,
+        "page_max": 70
+      },
+      {
+        "pattern": "\\d{1}",
+        "regex": "^\\d{1}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 1
+          }
+        ],
+        "page_min": 174,
+        "page_max": 174
+      },
+      {
+        "pattern": "",
+        "regex": "^$",
+        "page_patterns": [],
+        "page_min": null,
+        "page_max": null
+      }
+    ],
+    "date_range": {
+      "earliest": "1971-03-07",
+      "latest": "2025-11-11",
+      "anomalies": []
+    },
+    "doc_type_distribution": {
+      "DEED": 253,
+      "DEED OF TRUST": 44,
+      "PLAT": 36,
+      "Plat": 26,
+      "SATISFACTION": 25,
+      "RIGHT OF WAY": 9,
+      "DECLARATION": 8,
+      "Easement": 8,
+      "ASSIGNMENT": 7,
+      "SEE INSTRUMENT": 6
+    },
+    "unique_doc_types": 38
+  },
+  "forsyth": {
+    "record_count": 966,
+    "instrument_patterns": [
+      {
+        "pattern": "\\d{10}",
+        "regex": "^\\d{10}$",
+        "example": "1984027402",
+        "count": 959,
+        "percentage": 99.28
+      },
+      {
+        "pattern": "\\l{2}\\d{5}",
+        "regex": "^\\l{2}\\d{5}$",
+        "example": "bp12217",
+        "count": 3,
+        "percentage": 0.31
+      },
+      {
+        "pattern": "\\l{2}\\d{6}",
+        "regex": "^\\l{2}\\d{6}$",
+        "example": "bp144341",
+        "count": 2,
+        "percentage": 0.21
+      },
+      {
+        "pattern": "\\l{2}\\d{7}",
+        "regex": "^\\l{2}\\d{7}$",
+        "example": "bp1443932",
+        "count": 1,
+        "percentage": 0.1
+      },
+      {
+        "pattern": "\\l{2}\\d{4}",
+        "regex": "^\\l{2}\\d{4}$",
+        "example": "bp3311",
+        "count": 1,
+        "percentage": 0.1
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{4}",
+            "count": 500
+          },
+          {
+            "pattern": "\\d{3}",
+            "count": 350
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 32
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 7
+          }
+        ],
+        "page_min": 1,
+        "page_max": 4871
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 35
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 20
+          }
+        ],
+        "page_min": 11,
+        "page_max": 217
+      },
+      {
+        "pattern": "\\d{1}",
+        "regex": "^\\d{1}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 7
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 7
+          }
+        ],
+        "page_min": 31,
+        "page_max": 193
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 3
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 2
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 1
+          }
+        ],
+        "page_min": 1,
+        "page_max": 3496
+      },
+      {
+        "pattern": "",
+        "regex": "^$",
+        "page_patterns": [],
+        "page_min": null,
+        "page_max": null
+      }
+    ],
+    "date_range": {
+      "earliest": "1972-11-30",
+      "latest": "2025-12-18",
+      "anomalies": [
+        "0814-08-08"
+      ]
+    },
+    "doc_type_distribution": {
+      "DEED": 306,
+      "REL DEED": 223,
+      "D OF T": 78,
+      "PLAT": 51,
+      "ASGMT": 27,
+      "DEED OF TRUST": 25,
+      "DEED ACEPT": 22,
+      "SATISFACTION": 19,
+      "DEDICATION": 16,
+      "RESTR COV": 16
+    },
+    "unique_doc_types": 63
+  },
+  "guilford": {
+    "record_count": 14,
+    "instrument_patterns": [
+      {
+        "pattern": "\\d{10}",
+        "regex": "^\\d{10}$",
+        "example": "2004001709",
+        "count": 13,
+        "percentage": 92.86
+      },
+      {
+        "pattern": "\\l{2}\\d{5}",
+        "regex": "^\\l{2}\\d{5}$",
+        "example": "bp17840",
+        "count": 1,
+        "percentage": 7.14
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{4}",
+            "count": 11
+          },
+          {
+            "pattern": "\\d{3}",
+            "count": 1
+          }
+        ],
+        "page_min": 329,
+        "page_max": 2580
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 1
+          }
+        ],
+        "page_min": 40,
+        "page_max": 40
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 1
+          }
+        ],
+        "page_min": 40,
+        "page_max": 40
+      }
+    ],
+    "date_range": {
+      "earliest": "1999-07-11",
+      "latest": "2024-02-04",
+      "anomalies": []
+    },
+    "doc_type_distribution": {
+      "R": 7,
+      "DEED": 3,
+      "DT": 2,
+      "PLAT": 1,
+      "Plat": 1
+    },
+    "unique_doc_types": 5
+  },
+  "buncombe": {
+    "record_count": 130,
+    "instrument_patterns": [
+      {
+        "pattern": "\\l{2}\\d{7}",
+        "regex": "^\\l{2}\\d{7}$",
+        "example": "bp3734656",
+        "count": 68,
+        "percentage": 52.31
+      },
+      {
+        "pattern": "\\l{2}\\d{8}",
+        "regex": "^\\l{2}\\d{8}$",
+        "example": "bp46771911",
+        "count": 36,
+        "percentage": 27.69
+      },
+      {
+        "pattern": "\\l{2}\\d{6}",
+        "regex": "^\\l{2}\\d{6}$",
+        "example": "bp863749",
+        "count": 12,
+        "percentage": 9.23
+      },
+      {
+        "pattern": "\\l{2}\\d{4}",
+        "regex": "^\\l{2}\\d{4}$",
+        "example": "bp1823",
+        "count": 4,
+        "percentage": 3.08
+      },
+      {
+        "pattern": "\\l{2}\\d{5}",
+        "regex": "^\\l{2}\\d{5}$",
+        "example": "bp18378",
+        "count": 3,
+        "percentage": 2.31
+      },
+      {
+        "pattern": "\\d{12}",
+        "regex": "^\\d{12}$",
+        "example": "030650060012",
+        "count": 3,
+        "percentage": 2.31
+      },
+      {
+        "pattern": "\\d{11}\\u{1}",
+        "regex": "^\\d{11}\\u{1}$",
+        "example": "20250028495J",
+        "count": 2,
+        "percentage": 1.54
+      },
+      {
+        "pattern": "\\d{11}",
+        "regex": "^\\d{11}$",
+        "example": "26350580001",
+        "count": 1,
+        "percentage": 0.77
+      },
+      {
+        "pattern": "\\d{7}",
+        "regex": "^\\d{7}$",
+        "example": "7481033",
+        "count": 1,
+        "percentage": 0.77
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 57
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 38
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 5
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 1
+          }
+        ],
+        "page_min": 1,
+        "page_max": 1966
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 8
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 2
+          }
+        ],
+        "page_min": 63,
+        "page_max": 749
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 4
+          }
+        ],
+        "page_min": 20,
+        "page_max": 72
+      },
+      {
+        "pattern": "\\u{1}\\d{4}",
+        "regex": "^\\u{1}\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{4}",
+            "count": 1
+          }
+        ],
+        "page_min": 1790,
+        "page_max": 1790
+      },
+      {
+        "pattern": "",
+        "regex": "^$",
+        "page_patterns": [],
+        "page_min": null,
+        "page_max": null
+      }
+    ],
+    "date_range": {
+      "earliest": "1973-05-17",
+      "latest": "2025-11-12",
+      "anomalies": []
+    },
+    "doc_type_distribution": {
+      "DEED": 25,
+      "DEED OF TRUST": 23,
+      "UCC Financing Statement": 10,
+      "DEED OF TRUST SATISFACTION": 9,
+      "POWER OF ATTORNEY": 7,
+      "Plat": 7,
+      "Deed of Trust": 6,
+      "Satisfaction": 5,
+      "Covenants and Restrictions": 4,
+      "QUIT CLAIM DEED": 3
+    },
+    "unique_doc_types": 29
+  },
+  "onslow": {
+    "record_count": 1677,
+    "instrument_patterns": [
+      {
+        "pattern": "\\l{2}\\d{7}",
+        "regex": "^\\l{2}\\d{7}$",
+        "example": "bp3585841",
+        "count": 1445,
+        "percentage": 86.17
+      },
+      {
+        "pattern": "\\l{2}\\d{6}",
+        "regex": "^\\l{2}\\d{6}$",
+        "example": "bp340464",
+        "count": 142,
+        "percentage": 8.47
+      },
+      {
+        "pattern": "\\l{2}\\d{5}",
+        "regex": "^\\l{2}\\d{5}$",
+        "example": "bp45697",
+        "count": 49,
+        "percentage": 2.92
+      },
+      {
+        "pattern": "\\d{12}",
+        "regex": "^\\d{12}$",
+        "example": "013650330033",
+        "count": 19,
+        "percentage": 1.13
+      },
+      {
+        "pattern": "\\l{2}\\d{4}",
+        "regex": "^\\l{2}\\d{4}$",
+        "example": "bp5142",
+        "count": 19,
+        "percentage": 1.13
+      },
+      {
+        "pattern": "\\l{2}\\d{3}",
+        "regex": "^\\l{2}\\d{3}$",
+        "example": "bp873",
+        "count": 2,
+        "percentage": 0.12
+      },
+      {
+        "pattern": "\\d{6}-\\d{5}\\u{1}",
+        "regex": "^\\d{6}-\\d{5}\\u{1}$",
+        "example": "070529-59459A",
+        "count": 1,
+        "percentage": 0.06
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 1460
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 129
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 28
+          }
+        ],
+        "page_min": 1,
+        "page_max": 980
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 22
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 21
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 2
+          }
+        ],
+        "page_min": 3,
+        "page_max": 236
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 13
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 1
+          }
+        ],
+        "page_min": 98,
+        "page_max": 885
+      },
+      {
+        "pattern": "",
+        "regex": "^$",
+        "page_patterns": [],
+        "page_min": null,
+        "page_max": null
+      }
+    ],
+    "date_range": {
+      "earliest": "1976-04-16",
+      "latest": "2025-12-01",
+      "anomalies": []
+    },
+    "doc_type_distribution": {
+      "DEED": 648,
+      "RELEASE": 312,
+      "DEED OF TRUST": 252,
+      "CANCELLATION": 114,
+      "MISCELLANEOUS": 75,
+      "ASSIGNMENT": 32,
+      "MAP": 27,
+      "Deed of Trust": 26,
+      "AFFIDAVIT": 20,
+      "RESTRICTIVE COVENANT": 19
+    },
+    "unique_doc_types": 49
+  },
+  "union": {
+    "record_count": 152,
+    "instrument_patterns": [
+      {
+        "pattern": "\\d{4}-\\d{5}",
+        "regex": "^\\d{4}-\\d{5}$",
+        "example": "2001-42974",
+        "count": 151,
+        "percentage": 99.34
+      },
+      {
+        "pattern": "\\l{2}\\d{7}",
+        "regex": "^\\l{2}\\d{7}$",
+        "example": "bp8765541",
+        "count": 1,
+        "percentage": 0.66
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 123
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 19
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 2
+          }
+        ],
+        "page_min": 1,
+        "page_max": 892
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 7
+          }
+        ],
+        "page_min": 465,
+        "page_max": 932
+      },
+      {
+        "pattern": "",
+        "regex": "^$",
+        "page_patterns": [],
+        "page_min": null,
+        "page_max": null
+      }
+    ],
+    "date_range": {
+      "earliest": "1975-07-22",
+      "latest": "2018-10-11",
+      "anomalies": []
+    },
+    "doc_type_distribution": {
+      "DEED": 148,
+      "QCD": 3,
+      "Agreement": 1
+    },
+    "unique_doc_types": 3
+  },
+  "johnston": {
+    "record_count": 2493,
+    "instrument_patterns": [
+      {
+        "pattern": "\\d{10}",
+        "regex": "^\\d{10}$",
+        "example": "2023017351",
+        "count": 2206,
+        "percentage": 88.49
+      },
+      {
+        "pattern": "\\d{7}",
+        "regex": "^\\d{7}$",
+        "example": "1974798",
+        "count": 270,
+        "percentage": 10.83
+      },
+      {
+        "pattern": "\\l{2}\\d{7}",
+        "regex": "^\\l{2}\\d{7}$",
+        "example": "bp1587705",
+        "count": 4,
+        "percentage": 0.16
+      },
+      {
+        "pattern": "\\d{6}",
+        "regex": "^\\d{6}$",
+        "example": "979953",
+        "count": 4,
+        "percentage": 0.16
+      },
+      {
+        "pattern": "\\l{2}\\d{5}",
+        "regex": "^\\l{2}\\d{5}$",
+        "example": "bp90144",
+        "count": 3,
+        "percentage": 0.12
+      },
+      {
+        "pattern": "\\d{11}\\u{1}",
+        "regex": "^\\d{11}\\u{1}$",
+        "example": "20250087009E",
+        "count": 2,
+        "percentage": 0.08
+      },
+      {
+        "pattern": "\\l{2}\\d{6}",
+        "regex": "^\\l{2}\\d{6}$",
+        "example": "bp689566",
+        "count": 2,
+        "percentage": 0.08
+      },
+      {
+        "pattern": "\\d{5}",
+        "regex": "^\\d{5}$",
+        "example": "19426",
+        "count": 1,
+        "percentage": 0.04
+      },
+      {
+        "pattern": "\\l{2}\\d{4}",
+        "regex": "^\\l{2}\\d{4}$",
+        "example": "bp8984",
+        "count": 1,
+        "percentage": 0.04
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 2182
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 205
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 39
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 3
+          }
+        ],
+        "page_min": 1,
+        "page_max": 1000
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 40
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 5
+          }
+        ],
+        "page_min": 16,
+        "page_max": 878
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 13
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 4
+          }
+        ],
+        "page_min": 27,
+        "page_max": 561
+      },
+      {
+        "pattern": "",
+        "regex": "^$",
+        "page_patterns": [],
+        "page_min": null,
+        "page_max": null
+      }
+    ],
+    "date_range": {
+      "earliest": "1989-10-19",
+      "latest": "2025-09-30",
+      "anomalies": [
+        "1873-05-06"
+      ]
+    },
+    "doc_type_distribution": {
+      "DEED OF TRUST": 636,
+      "SATISFACTION": 539,
+      "DEED": 532,
+      "SEE INSTRUMENT": 139,
+      "RELEASE": 96,
+      "SUBSTITUTION TRUSTEE": 91,
+      "PARTIAL RELEASE": 85,
+      "ASSIGNMENT": 79,
+      "Historical": 41,
+      "EASEMENT": 32
+    },
+    "unique_doc_types": 41
+  },
+  "cabarrus": {
+    "record_count": 409,
+    "instrument_patterns": [
+      {
+        "pattern": "\\d{4}-\\d{5}",
+        "regex": "^\\d{4}-\\d{5}$",
+        "example": "1994-12520",
+        "count": 282,
+        "percentage": 68.95
+      },
+      {
+        "pattern": "\\d{5}",
+        "regex": "^\\d{5}$",
+        "example": "05956",
+        "count": 52,
+        "percentage": 12.71
+      },
+      {
+        "pattern": "\\l{2}\\d{6}",
+        "regex": "^\\l{2}\\d{6}$",
+        "example": "bp265233",
+        "count": 23,
+        "percentage": 5.62
+      },
+      {
+        "pattern": "\\l{2}\\d{7}",
+        "regex": "^\\l{2}\\d{7}$",
+        "example": "bp3690126",
+        "count": 19,
+        "percentage": 4.65
+      },
+      {
+        "pattern": "\\l{2}\\d{8}",
+        "regex": "^\\l{2}\\d{8}$",
+        "example": "bp00260069",
+        "count": 10,
+        "percentage": 2.44
+      },
+      {
+        "pattern": "\\l{2}\\d{5}",
+        "regex": "^\\l{2}\\d{5}$",
+        "example": "bp23964",
+        "count": 6,
+        "percentage": 1.47
+      },
+      {
+        "pattern": "\\l{2}\\d{4}",
+        "regex": "^\\l{2}\\d{4}$",
+        "example": "bp3112",
+        "count": 5,
+        "percentage": 1.22
+      },
+      {
+        "pattern": "\\d{2}\\u{2}\\d{6}-\\d{3}",
+        "regex": "^\\d{2}\\u{2}\\d{6}-\\d{3}$",
+        "example": "18CR052572-630",
+        "count": 2,
+        "percentage": 0.49
+      },
+      {
+        "pattern": "\\l{2}\\d{3}",
+        "regex": "^\\l{2}\\d{3}$",
+        "example": "bp156",
+        "count": 2,
+        "percentage": 0.49
+      },
+      {
+        "pattern": "\\l{2}\\d{3}\\u{4}",
+        "regex": "^\\l{2}\\d{3}\\u{4}$",
+        "example": "bp464FAGE",
+        "count": 1,
+        "percentage": 0.24
+      },
+      {
+        "pattern": "\\d{4} \\d{4}",
+        "regex": "^\\d{4} \\d{4}$",
+        "example": "5154 0176",
+        "count": 1,
+        "percentage": 0.24
+      },
+      {
+        "pattern": "\\d{2}-\\d{4}.\\d{2}",
+        "regex": "^\\d{2}-\\d{4}.\\d{2}$",
+        "example": "96-1203.01",
+        "count": 1,
+        "percentage": 0.24
+      },
+      {
+        "pattern": "\\d{6}",
+        "regex": "^\\d{6}$",
+        "example": "024983",
+        "count": 1,
+        "percentage": 0.24
+      },
+      {
+        "pattern": "\\d{7}\\u{1}",
+        "regex": "^\\d{7}\\u{1}$",
+        "example": "6732300K",
+        "count": 1,
+        "percentage": 0.24
+      },
+      {
+        "pattern": "\\d{2}\\u{1}\\d{6}-\\d{3}",
+        "regex": "^\\d{2}\\u{1}\\d{6}-\\d{3}$",
+        "example": "19M000359-000",
+        "count": 1,
+        "percentage": 0.24
+      },
+      {
+        "pattern": "\\d{5} \\d{4}",
+        "regex": "^\\d{5} \\d{4}$",
+        "example": "13729 0336",
+        "count": 1,
+        "percentage": 0.24
+      },
+      {
+        "pattern": "\\d{10}",
+        "regex": "^\\d{10}$",
+        "example": "1728802109",
+        "count": 1,
+        "percentage": 0.24
+      }
+    ],
+    "book_patterns": [
+      {
+        "pattern": "\\d{4}",
+        "regex": "^\\d{4}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 142
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 34
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 3
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 2
+          }
+        ],
+        "page_min": 1,
+        "page_max": 365
+      },
+      {
+        "pattern": "\\d{5}",
+        "regex": "^\\d{5}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 59
+          },
+          {
+            "pattern": "\\d{4}",
+            "count": 54
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 17
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 2
+          }
+        ],
+        "page_min": 1,
+        "page_max": 362
+      },
+      {
+        "pattern": "\\d{3}",
+        "regex": "^\\d{3}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{3}",
+            "count": 49
+          },
+          {
+            "pattern": "\\d{2}",
+            "count": 12
+          },
+          {
+            "pattern": "\\u{4}",
+            "count": 1
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 1
+          }
+        ],
+        "page_min": 4,
+        "page_max": 847
+      },
+      {
+        "pattern": "\\d{2}",
+        "regex": "^\\d{2}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 14
+          },
+          {
+            "pattern": "\\d{1}",
+            "count": 3
+          },
+          {
+            "pattern": "\\d{3}",
+            "count": 1
+          }
+        ],
+        "page_min": 4,
+        "page_max": 108
+      },
+      {
+        "pattern": "\\d{1}",
+        "regex": "^\\d{1}$",
+        "page_patterns": [
+          {
+            "pattern": "\\d{2}",
+            "count": 4
+          }
+        ],
+        "page_min": 11,
+        "page_max": 72
+      },
+      {
+        "pattern": "",
+        "regex": "^$",
+        "page_patterns": [],
+        "page_min": null,
+        "page_max": null
+      }
+    ],
+    "date_range": {
+      "earliest": "1970-08-30",
+      "latest": "2025-08-19",
+      "anomalies": [
+        "0390-03-24"
+      ]
+    },
+    "doc_type_distribution": {
+      "D-TR": 45,
+      "DEED": 45,
+      "REST": 37,
+      "SAT": 27,
+      "MTGE": 21,
+      "PLAT": 16,
+      "ASIGN": 15,
+      "Deed of Trust": 15,
+      "General Warranty Deed": 14,
+      "Deed": 12
+    },
+    "unique_doc_types": 72
+  }
+}

@@ -1,0 +1,925 @@
+{
+  "alamance": {
+    "record_count": 89,
+    "book": {
+      "null_count": 7,
+      "null_percentage": 7.87,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "4712",
+          "count": 65,
+          "percentage": 79.27
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "509",
+          "count": 12,
+          "percentage": 14.63
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "83",
+          "count": 5,
+          "percentage": 6.1
+        }
+      ]
+    },
+    "page": {
+      "null_count": 7,
+      "null_percentage": 7.87,
+      "patterns": [
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "143",
+          "count": 66,
+          "percentage": 80.49
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "24",
+          "count": 9,
+          "percentage": 10.98
+        },
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "0701",
+          "count": 7,
+          "percentage": 8.54
+        }
+      ]
+    }
+  },
+  "buncombe": {
+    "record_count": 130,
+    "book": {
+      "null_count": 14,
+      "null_percentage": 10.77,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "6007",
+          "count": 101,
+          "percentage": 87.07
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "790",
+          "count": 10,
+          "percentage": 8.62
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "36",
+          "count": 4,
+          "percentage": 3.45
+        },
+        {
+          "pattern": "AAAAA",
+          "regex": "^[A-Za-z]{5}$",
+          "example": "K5551",
+          "count": 1,
+          "percentage": 0.86
+        }
+      ]
+    },
+    "page": {
+      "null_count": 14,
+      "null_percentage": 10.77,
+      "patterns": [
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "335",
+          "count": 65,
+          "percentage": 56.03
+        },
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "1122",
+          "count": 39,
+          "percentage": 33.62
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "63",
+          "count": 11,
+          "percentage": 9.48
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "1",
+          "count": 1,
+          "percentage": 0.86
+        }
+      ]
+    }
+  },
+  "cabarrus": {
+    "record_count": 409,
+    "book": {
+      "null_count": 11,
+      "null_percentage": 2.69,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "2897",
+          "count": 181,
+          "percentage": 45.48
+        },
+        {
+          "pattern": "AAAAA",
+          "regex": "^[A-Za-z]{5}$",
+          "example": "17357",
+          "count": 132,
+          "percentage": 33.17
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "461",
+          "count": 63,
+          "percentage": 15.83
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "26",
+          "count": 18,
+          "percentage": 4.52
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "2",
+          "count": 4,
+          "percentage": 1.01
+        }
+      ]
+    },
+    "page": {
+      "null_count": 11,
+      "null_percentage": 2.69,
+      "patterns": [
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "689",
+          "count": 251,
+          "percentage": 63.07
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "87",
+          "count": 81,
+          "percentage": 20.35
+        },
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "0333",
+          "count": 58,
+          "percentage": 14.57
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "1",
+          "count": 8,
+          "percentage": 2.01
+        }
+      ]
+    }
+  },
+  "cumberland": {
+    "record_count": 2479,
+    "book": {
+      "null_count": 1,
+      "null_percentage": 0.04,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "7499",
+          "count": 1599,
+          "percentage": 64.53
+        },
+        {
+          "pattern": "AAAAA",
+          "regex": "^[A-Za-z]{5}$",
+          "example": "10627",
+          "count": 756,
+          "percentage": 30.51
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "640",
+          "count": 100,
+          "percentage": 4.04
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "35",
+          "count": 20,
+          "percentage": 0.81
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "A",
+          "count": 2,
+          "percentage": 0.08
+        },
+        {
+          "pattern": "AA-AAAA",
+          "regex": "^[A-Za-z]{2}\\-[A-Za-z]{4}$",
+          "example": "33-3006",
+          "count": 1,
+          "percentage": 0.04
+        }
+      ]
+    },
+    "page": {
+      "null_count": 1,
+      "null_percentage": 0.04,
+      "patterns": [
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "283",
+          "count": 2084,
+          "percentage": 84.1
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "85",
+          "count": 300,
+          "percentage": 12.11
+        },
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "0317",
+          "count": 53,
+          "percentage": 2.14
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "5",
+          "count": 40,
+          "percentage": 1.61
+        },
+        {
+          "pattern": "AAAAA",
+          "regex": "^[A-Za-z]{5}$",
+          "example": "60352",
+          "count": 1,
+          "percentage": 0.04
+        }
+      ]
+    }
+  },
+  "davidson": {
+    "record_count": 23,
+    "book": {
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "2564",
+          "count": 17,
+          "percentage": 73.91
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "489",
+          "count": 4,
+          "percentage": 17.39
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "5",
+          "count": 1,
+          "percentage": 4.35
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "48",
+          "count": 1,
+          "percentage": 4.35
+        }
+      ]
+    },
+    "page": {
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "patterns": [
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "151",
+          "count": 13,
+          "percentage": 56.52
+        },
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "1272",
+          "count": 6,
+          "percentage": 26.09
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "67",
+          "count": 4,
+          "percentage": 17.39
+        }
+      ]
+    }
+  },
+  "durham": {
+    "record_count": 491,
+    "book": {
+      "null_count": 2,
+      "null_percentage": 0.41,
+      "patterns": [
+        {
+          "pattern": "AAAAA",
+          "regex": "^[A-Za-z]{5}$",
+          "example": "10346",
+          "count": 250,
+          "percentage": 51.12
+        },
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "6426",
+          "count": 169,
+          "percentage": 34.56
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "171",
+          "count": 64,
+          "percentage": 13.09
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "58",
+          "count": 5,
+          "percentage": 1.02
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "4",
+          "count": 1,
+          "percentage": 0.2
+        }
+      ]
+    },
+    "page": {
+      "null_count": 2,
+      "null_percentage": 0.41,
+      "patterns": [
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "890",
+          "count": 410,
+          "percentage": 83.84
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "71",
+          "count": 70,
+          "percentage": 14.31
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "1",
+          "count": 8,
+          "percentage": 1.64
+        },
+        {
+          "pattern": "AAA-AAA",
+          "regex": "^[A-Za-z]{3}\\-[A-Za-z]{3}$",
+          "example": "190-192",
+          "count": 1,
+          "percentage": 0.2
+        }
+      ]
+    }
+  },
+  "forsyth": {
+    "record_count": 966,
+    "book": {
+      "null_count": 2,
+      "null_percentage": 0.21,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "1489",
+          "count": 889,
+          "percentage": 92.22
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "59",
+          "count": 55,
+          "percentage": 5.71
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "3",
+          "count": 14,
+          "percentage": 1.45
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "127",
+          "count": 6,
+          "percentage": 0.62
+        }
+      ]
+    },
+    "page": {
+      "null_count": 2,
+      "null_percentage": 0.21,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "1059",
+          "count": 502,
+          "percentage": 52.07
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "222",
+          "count": 395,
+          "percentage": 40.98
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "50",
+          "count": 59,
+          "percentage": 6.12
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "1",
+          "count": 8,
+          "percentage": 0.83
+        }
+      ]
+    }
+  },
+  "guilford": {
+    "record_count": 14,
+    "book": {
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "6004",
+          "count": 12,
+          "percentage": 85.71
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "82",
+          "count": 1,
+          "percentage": 7.14
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "178",
+          "count": 1,
+          "percentage": 7.14
+        }
+      ]
+    },
+    "page": {
+      "null_count": 0,
+      "null_percentage": 0.0,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "1067",
+          "count": 11,
+          "percentage": 78.57
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "40",
+          "count": 2,
+          "percentage": 14.29
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "329",
+          "count": 1,
+          "percentage": 7.14
+        }
+      ]
+    }
+  },
+  "johnston": {
+    "record_count": 2493,
+    "book": {
+      "null_count": 2,
+      "null_percentage": 0.08,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "6236",
+          "count": 2429,
+          "percentage": 97.51
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "933",
+          "count": 45,
+          "percentage": 1.81
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "78",
+          "count": 17,
+          "percentage": 0.68
+        }
+      ]
+    },
+    "page": {
+      "null_count": 2,
+      "null_percentage": 0.08,
+      "patterns": [
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "916",
+          "count": 2235,
+          "percentage": 89.72
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "72",
+          "count": 214,
+          "percentage": 8.59
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "5",
+          "count": 39,
+          "percentage": 1.57
+        },
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "1000",
+          "count": 3,
+          "percentage": 0.12
+        }
+      ]
+    }
+  },
+  "mecklenburg": {
+    "record_count": 2490,
+    "book": {
+      "null_count": 8,
+      "null_percentage": 0.32,
+      "patterns": [
+        {
+          "pattern": "AAAAA",
+          "regex": "^[A-Za-z]{5}$",
+          "example": "38254",
+          "count": 1646,
+          "percentage": 66.32
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "27",
+          "count": 476,
+          "percentage": 19.18
+        },
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "9889",
+          "count": 336,
+          "percentage": 13.54
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "715",
+          "count": 17,
+          "percentage": 0.68
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "2",
+          "count": 6,
+          "percentage": 0.24
+        },
+        {
+          "pattern": "AAAA AAA",
+          "regex": "^[A-Za-z]{4}\\ [A-Za-z]{3}$",
+          "example": "SATS 954",
+          "count": 1,
+          "percentage": 0.04
+        }
+      ]
+    },
+    "page": {
+      "null_count": 8,
+      "null_percentage": 0.32,
+      "patterns": [
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "450",
+          "count": 2184,
+          "percentage": 87.99
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "17",
+          "count": 256,
+          "percentage": 10.31
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "1",
+          "count": 24,
+          "percentage": 0.97
+        },
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "0454",
+          "count": 16,
+          "percentage": 0.64
+        },
+        {
+          "pattern": "AAAAAA",
+          "regex": "^[A-Za-z]{6}$",
+          "example": "574574",
+          "count": 2,
+          "percentage": 0.08
+        }
+      ]
+    }
+  },
+  "onslow": {
+    "record_count": 1677,
+    "book": {
+      "null_count": 1,
+      "null_percentage": 0.06,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "5399",
+          "count": 1617,
+          "percentage": 96.48
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "39",
+          "count": 45,
+          "percentage": 2.68
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "557",
+          "count": 14,
+          "percentage": 0.84
+        }
+      ]
+    },
+    "page": {
+      "null_count": 1,
+      "null_percentage": 0.06,
+      "patterns": [
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "793",
+          "count": 1495,
+          "percentage": 89.2
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "98",
+          "count": 151,
+          "percentage": 9.01
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "1",
+          "count": 30,
+          "percentage": 1.79
+        }
+      ]
+    }
+  },
+  "union": {
+    "record_count": 152,
+    "book": {
+      "null_count": 1,
+      "null_percentage": 0.66,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "1509",
+          "count": 144,
+          "percentage": 95.36
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "396",
+          "count": 7,
+          "percentage": 4.64
+        }
+      ]
+    },
+    "page": {
+      "null_count": 1,
+      "null_percentage": 0.66,
+      "patterns": [
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "452",
+          "count": 130,
+          "percentage": 86.09
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "97",
+          "count": 19,
+          "percentage": 12.58
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "1",
+          "count": 2,
+          "percentage": 1.32
+        }
+      ]
+    }
+  },
+  "wake": {
+    "record_count": 2473,
+    "book": {
+      "null_count": 9,
+      "null_percentage": 0.36,
+      "patterns": [
+        {
+          "pattern": "AAAAA",
+          "regex": "^[A-Za-z]{5}$",
+          "example": "10905",
+          "count": 1500,
+          "percentage": 60.88
+        },
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "6992",
+          "count": 795,
+          "percentage": 32.26
+        },
+        {
+          "pattern": "AAAAAA",
+          "regex": "^[A-Za-z]{6}$",
+          "example": "019165",
+          "count": 153,
+          "percentage": 6.21
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "124",
+          "count": 13,
+          "percentage": 0.53
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "32",
+          "count": 2,
+          "percentage": 0.08
+        },
+        {
+          "pattern": "AAAA AAA.A",
+          "regex": "^[A-Za-z]{4}\\ [A-Za-z]{3}\\.[A-Za-z]{1}$",
+          "example": "1972 Vol.1",
+          "count": 1,
+          "percentage": 0.04
+        }
+      ]
+    },
+    "page": {
+      "null_count": 9,
+      "null_percentage": 0.36,
+      "patterns": [
+        {
+          "pattern": "AAAA",
+          "regex": "^[A-Za-z]{4}$",
+          "example": "2162",
+          "count": 1206,
+          "percentage": 48.94
+        },
+        {
+          "pattern": "AAA",
+          "regex": "^[A-Za-z]{3}$",
+          "example": "703",
+          "count": 1119,
+          "percentage": 45.41
+        },
+        {
+          "pattern": "AA",
+          "regex": "^[A-Za-z]{2}$",
+          "example": "49",
+          "count": 107,
+          "percentage": 4.34
+        },
+        {
+          "pattern": "AAAAA",
+          "regex": "^[A-Za-z]{5}$",
+          "example": "01155",
+          "count": 24,
+          "percentage": 0.97
+        },
+        {
+          "pattern": "A",
+          "regex": "^[A-Za-z]{1}$",
+          "example": "6",
+          "count": 8,
+          "percentage": 0.32
+        }
+      ]
+    }
+  }
+}
