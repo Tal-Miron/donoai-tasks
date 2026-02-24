@@ -18,6 +18,7 @@ OUTPUT_PATH = "outputs/seminole_results.json"
 NAME_MIN_LENGTH = 2
 NAME_MAX_LENGTH = 50
 PAGER_NO_CONTENT_LABEL = "0 - 0 of 0"
+REQUEST_DELAY_SECONDS = 0.5
 
 # ---------------------------------------------------------------------------
 # Parsing helpers
@@ -215,7 +216,7 @@ async def table_size_to_max(page):
 
 async def navigate_next(page):
     """Clicks to the next table page and waits for the grid to re-render."""
-
+    await asyncio.sleep(REQUEST_DELAY_SECONDS)  # rate limit
     old_label = await page.locator("#grid_pager_label").inner_text()
 
     await page.get_by_text("Next", exact=True).click()
