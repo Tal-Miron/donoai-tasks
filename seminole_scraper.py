@@ -7,7 +7,7 @@ import json
 def parse_names(value: str | None) -> list[str]:
     if not value:
         return []
-    return [name.strip() for name in value.split(" ,") if name.strip()]
+    return [name.strip().upper() for name in value.split(" ,") if name.strip()]
 
 def parse_table(page) -> list:
     records = []
@@ -105,29 +105,32 @@ def scrape(name) -> list:
             page.click("#grid_editor_list_item_4")
             page.wait_for_timeout(1000)
 
+            while True:
+                # scrape current page
+                result.extend(parse_table(page))
+                
+                # check if the SPAN has disabled class
+                next_span = page.locator(".ui-iggrid-nextpagelabel, .ui-iggrid-nextpagelabeldisabled")
+                next_class = next_span.get_attribute("class")
+                
+                if "ui-iggrid-nextpagelabeldisabled" in next_class:
+                    break  # last page, stop
+                
+                # click the outer div (not the span)
+                page.click(".ui-iggrid-nextpage")
+                
+                # wait for grid to re-render
+                page.wait_for_selector("td[role='gridcell']")
+                page.wait_for_timeout(500)
+
         except Exception as e:
-            logging.error(f"❌ Unexpected error: {e}")
+            logging.exception(f"Unexpected error during scrape: {e}")
             return []
 
+        finally:
+            if browser:
+                browser.close()
         
-        while True:
-            # scrape current page
-            result.extend(parse_table(page))
-            
-            # check if the SPAN has disabled class
-            next_span = page.locator(".ui-iggrid-nextpagelabel, .ui-iggrid-nextpagelabeldisabled")
-            next_class = next_span.get_attribute("class")
-            
-            if "ui-iggrid-nextpagelabeldisabled" in next_class:
-                break  # last page, stop
-            
-            # click the outer div (not the span)
-            page.click(".ui-iggrid-nextpage")
-            
-            # wait for grid to re-render
-            page.wait_for_selector("td[role='gridcell']")
-            page.wait_for_timeout(500)
-    
     logging.info(f"Total records found: {len(result)}")
     return result
 
@@ -145,20 +148,21 @@ def validate_name(value) -> str:
 
     return value.upper()
 
-
 def main():
+
+    logging.basicConfig(level=logging.INFO)
 
     try:
             raw_name = input("Enter name to search: ")
             name = validate_name(raw_name)
             print(f"Searching for: {name}")
-    except ValueError as e:
+            result = scrape(name)
+    except Exception as e:
         raise SystemExit(f"Error: {e}")
     
-    result = scrape(name)
     with open("outputs/seminole_results.json", "w") as f:
         json.dump(result, f, indent=2)
+    print("Done :)")
 
-
-if __name__ == "__main__" :
+if __name__ == "__main__":
     main()
