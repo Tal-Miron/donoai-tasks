@@ -3,6 +3,17 @@
 A scraper for the Seminole County Official Records system that searches by name and returns all matching property records as structured JSON, normalized to match the NC records data format.
 
 
+## Setup & How to Run
+
+Run the scraper:
+python src/seminole_scraper.py
+
+Enter a name when prompted:
+Enter name to search: [INPUT]
+
+Results are written to outputs/seminole_results.json
+
+
 ## How It Works
 
 In the terminal a name is provided as an input.
@@ -57,7 +68,7 @@ After clicking Next Page, `wait_for_selector("td[role='gridcell']")` alone was n
 ## Assumptions ##
 
 - in the table grantors & grantees separate names with  ' ,' 
-- 
+- Fields not in grid: parcel_number, doc_category, original_doc_type, book_type, and consideration are not present in the search results table. They are only available on individual document detail pages. Per the task instructions, document detail pages are not retrieved, so these fields are consistently set to null. Yet county and state are reffered.
 
 
 
@@ -92,3 +103,10 @@ A 0.5s delay is applied before each Next Page click. This keeps the scraper resp
 ## Estimated Performance
 
 `<!-- e.g. ~300 records/minute, based on NAME search (COUNT records in TIMEs) -->`
+
+
+
+## Additional Notes
+
+- The scraper runs in headed mode (headless=False) by default so browser interactions are visible. To run headlessly, change headless=False to headless=True in scrape().
+- Logging is set to DEBUG level by default, printing every step to the console. To reduce noise in production, change logging.DEBUG to logging.INFO in main().
