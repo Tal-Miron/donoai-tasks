@@ -1,8 +1,3 @@
-"""
-Seminole County, FL - Official Records Scraper
-https://recording.seminoleclerk.org/DuProcessWebInquiry/index.html
-"""
-
 import json
 import logging
 import os
@@ -19,7 +14,6 @@ from playwright.sync_api import sync_playwright
 URL = "https://recording.seminoleclerk.org/DuProcessWebInquiry/index.html"
 DATE_FORMAT = "%m/%d/%Y, %I:%M:%S %p"
 OUTPUT_PATH = "outputs/seminole_results.json"
-
 NAME_MIN_LENGTH = 2
 NAME_MAX_LENGTH = 50
 
@@ -30,8 +24,8 @@ NAME_MAX_LENGTH = 50
 def parse_names(value: str | None) -> list[str]:
     """Split a delimited name string into a list of uppercase names.
 
-    The site separates names with ' ,' (space-comma).
-    Returns an empty list if value is None or empty.
+    Not sure, but assuming the site separates names with ' ,'
+    Returns an empty list if value is None or empty
     """
     if not value:
         return []
@@ -40,7 +34,6 @@ def parse_names(value: str | None) -> list[str]:
 
 def parse_date(raw: str) -> str | None:
     """Parse a date string from the grid into ISO 8601 format.
-
     Returns None if the string cannot be parsed.
     """
     try:
@@ -51,9 +44,8 @@ def parse_date(raw: str) -> str | None:
 
 def parse_table(html: str) -> list[dict]:
     """Extract records from the search results grid HTML.
-
     Fields not present in the grid (parcel_number, doc_category, etc.)
-    are set to None — they are only available on individual document pages,
+    are set to None - they are only available on individual document pages,
     which this scraper does not retrieve.
     """
     records = []
@@ -98,11 +90,9 @@ def parse_table(html: str) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 def scrape(name: str) -> list[dict]:
-    """Search the Seminole County recording system and return all matching records.
-
+    """Searches the Seminole County recording system and return all matching records.
     Args:
         name: Validated, uppercased name to search for.
-
     Returns:
         List of record dicts. Returns an empty list on error or no results.
     """
@@ -177,8 +167,7 @@ def scrape(name: str) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 def validate_name(value: str) -> str:
-    """Validate and normalise a search name.
-
+    """Validate and normalise inputted name.
     Raises ValueError with a descriptive message on invalid input.
     Returns the name stripped and uppercased.
     """
@@ -213,7 +202,7 @@ def main() -> None:
     with open(OUTPUT_PATH, "w") as f:
         json.dump(result, f, indent=2)
 
-    print(f"Done — {len(result)} record(s) written to {OUTPUT_PATH}")
+    print(f"Done - {len(result)} record(s) written to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":
