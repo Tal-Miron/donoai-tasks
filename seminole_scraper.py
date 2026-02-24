@@ -39,6 +39,7 @@ def parse_date(raw: str) -> str | None:
     try:
         return datetime.strptime(raw, DATE_FORMAT).isoformat()
     except ValueError:
+        logging.warning(f"Could not parse date: '{raw}'")
         return None
 
 
@@ -116,8 +117,10 @@ def scrape(name: str) -> list[dict]:
 
             # --- Accept disclaimer & submit search ---
             page.click("text=Agreed & Enter")
+            logging.debug("Accepted disclaimer")
             page.fill("#criteria_full_name", name)
             page.locator("a.btn.btn-success.w-40").filter(has_text="Search").nth(0).click()
+            logging.info(f"Starting to search for: '{name}'")
 
             try:
                 page.wait_for_selector("img[src*='loading_small']", state="hidden")
@@ -136,10 +139,12 @@ def scrape(name: str) -> list[dict]:
             page.wait_for_selector("#grid_editor_list_item_4", state="visible")
             page.click("#grid_editor_list_item_4")
             page.wait_for_timeout(1000)
+            logging.info("Expanded table for optimized search")
 
             # --- Paginate and collect ---
             while True:
                 result.extend(parse_table(page.content()))
+                logging.debug(f"Parsed {len(result)} records from current page")
 
                 next_span = page.locator(
                     ".ui-iggrid-nextpagelabel, .ui-iggrid-nextpagelabeldisabled"
@@ -149,6 +154,7 @@ def scrape(name: str) -> list[dict]:
 
                 page.click(".ui-iggrid-nextpage")
                 page.wait_for_selector("td[role='gridcell']")
+                logging.info("Scraping next page")
                 page.wait_for_timeout(500)
 
         except Exception:
