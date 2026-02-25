@@ -116,7 +116,7 @@ async def scrape(name: str):
     async with async_playwright() as p:
         browser = None
         try:
-            browser = await p.chromium.launch(headless=False, slow_mo=500)
+            browser = await p.chromium.launch(headless=True)#, slow_mo=100)
             page = await browser.new_page()
             page.set_default_timeout(120000)  # 2 minutes
 
@@ -134,21 +134,35 @@ async def scrape(name: str):
             logging.info("Accepted disclaimer")
 
             #Search
-            await page.get_by_role("textbox", name="Name (lastname, firstname)").fill(name)
+            textbox = page.get_by_role("textbox", name="Name (lastname, firstname)")
+            await textbox.wait_for(state="visible")
+            await textbox.fill(name)
+            #await page.get_by_role("textbox", name="Name (lastname, firstname)").fill(name)
             await page.get_by_text("Search").nth(1).click()
             logging.info(f"Starting to search for: '{name}'")
 
             #Wait for table to load
             try:
-                logging.info("Waitig for table to load")
+                logging.info("Waiting for table to load")
+                # wait for spinner to appear (search has started)
+                await page.wait_for_selector("img[src*='loading_small']", state="visible")
+                # wait for spinner to disappear (results are ready)
                 await page.wait_for_selector("img[src*='loading_small']", state="hidden")
             except PlaywrightTimeout:
                 logging.error("Timed out waiting for results table to load")
                 return []
-
+            
             #Check for empty results
-            pager_label = await page.locator("#grid_pager_label").inner_text()
-            if PAGER_NO_CONTENT_LABEL in pager_label:
+            try:
+                logging.info("Waitig for page label to load")
+                pager_label = page.locator("#grid_pager_label")
+                await pager_label.wait_for(state="visible")
+                pager_label_text = await pager_label.inner_text()
+            except PlaywrightTimeout:
+                logging.error("Timed out waiting for results table to load")
+                return []
+            
+            if PAGER_NO_CONTENT_LABEL in pager_label_text:
                 logging.info(f"No results found for '{name}'")
                 return []
 
@@ -188,7 +202,7 @@ async def scrape(name: str):
 
         finally:
             if browser:
-                browser.close()
+                await browser.close()
 
     logging.info(f"Total records found: {len(result)}")
     return result
@@ -198,9 +212,13 @@ async def scrape(name: str):
 # ---------------------------------------------------------------------------
 
 async def table_size_to_max(page):
-    #Set page size to maximum
+    #Set page size to maximum if needed (more than 30 results)
 
     old_label = await page.locator("#grid_pager_label").inner_text()
+    total = int(old_label.split("of")[1].strip().split()[0])
+    if(total < 31):
+        logging.info("No need to expand table")
+        return
 
     await page.locator("#grid_editor_dropDownButton").click()
     option = page.get_by_role("option", name="60")

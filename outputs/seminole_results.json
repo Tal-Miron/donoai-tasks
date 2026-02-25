@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "instrument_number": "2007033939",
+    "book": "06612",
+    "page": "0556",
+    "doc_type": "MARRIAGE LICENSE",
+    "date": "2007-03-06T14:58:08",
+    "grantors": [
+      "TALAA,KENNETH STEPHEN JOHN"
+    ],
+    "grantees": [
+      "RE MARRIAGE LICENSE"
+    ],
+    "parcel_number": null,
+    "county": "seminole",
+    "state": "FL",
+    "doc_category": null,
+    "original_doc_type": null,
+    "book_type": null,
+    "consideration": null
+  },
+  {
+    "instrument_number": "2013152070",
+    "book": "08172",
+    "page": "1599",
+    "doc_type": "JUDGMENT",
+    "date": "2013-12-05T14:58:08",
+    "grantors": [
+      "TALAA,KENNETH STEPHEN JOHN"
+    ],
+    "grantees": [
+      "RE JUDGMENT"
+    ],
+    "parcel_number": null,
+    "county": "seminole",
+    "state": "FL",
+    "doc_category": null,
+    "original_doc_type": null,
+    "book_type": null,
+    "consideration": null
+  }
+]
