@@ -1,6 +1,5 @@
 import re
 import datetime
-from datetime import datetime
 from typing import Any, Optional
 
 def _clean_str(value: Any) -> str:
@@ -36,23 +35,3 @@ def _get_pattern(value: str) -> str:
         return f'\\u{{{n}}}'
 
     return re.sub(r'\d+|[a-z]+|[A-Z]+', replacer, value)
-
-def parse_names(value: str | None) -> list[str]:
-    """Split a delimited name string into a list of uppercase names.
-
-    Not sure, but assuming the site separates names with ' ,'
-    Returns an empty list if value is None or empty
-    """
-    if not value:
-        return []
-    return [name.strip().upper() for name in value.split(" ,") if name.strip()]
-
-def parse_date(raw: str) -> str | None:
-    """Parse a date string from the grid into ISO 8601 format.
-    Returns None if the string cannot be parsed.
-    """
-    try:
-        return datetime.strptime(raw, DATE_FORMAT).isoformat()
-    except ValueError:
-        logging.warning(f"Could not parse date: '{raw}'")
-        return None

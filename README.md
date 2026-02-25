@@ -200,7 +200,7 @@ MetricValueExtraction speed (parsing only)~15,000 records/minEnd-to-end speed (i
 
 
 
-# Task 3
+# Task 3: LLM Classifier
 
 I did not finish, but the first part of normalizing the data before sendin it to a model is attached.
 the code streams the JSONL file and applies a 7-step normalization

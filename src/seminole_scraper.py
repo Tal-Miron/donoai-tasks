@@ -2,11 +2,11 @@ import json
 import logging
 import os
 import asyncio
+from datetime import datetime
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 from playwright.async_api import TimeoutError as PlaywrightTimeout
 import time
-from utils import parse_date, parse_names
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -23,6 +23,26 @@ REQUEST_DELAY_SECONDS = 0.5
 # ---------------------------------------------------------------------------
 # Parsing helpers
 # ---------------------------------------------------------------------------
+
+def parse_names(value: str | None) -> list[str]:
+    """Split a delimited name string into a list of uppercase names.
+
+    Not sure, but assuming the site separates names with ' ,'
+    Returns an empty list if value is None or empty
+    """
+    if not value:
+        return []
+    return [name.strip().upper() for name in value.split(" ,") if name.strip()]
+
+def parse_date(raw: str) -> str | None:
+    """Parse a date string from the grid into ISO 8601 format.
+    Returns None if the string cannot be parsed.
+    """
+    try:
+        return datetime.strptime(raw, DATE_FORMAT).isoformat()
+    except ValueError:
+        logging.warning(f"Could not parse date: '{raw}'")
+        return None
 
 def parse_row(row) -> dict | None:
     """Parse a single grid row into a record dict.
