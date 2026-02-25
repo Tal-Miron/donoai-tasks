@@ -47,7 +47,8 @@ All fields are cleaned through `ParsedRecord.from_row()` before processing. Empt
 doc_type and doc_category do relate. i have created a heat map between the two vaules.
 seems like doc types that explicitly contain 'DEED' are catagorized as DEEDs (eg REL DEED).
 all other doc types are have other catagories.
-results and code are under outputs/analyzed data
+results and code are under outputs/analyzed data in git: 
+https://github.com/Tal-Miron/donoai-tasks/tree/main/outputs/analyzed_data
 
 ## Additional Notes
 I have runned scripts to analyze some of the data and look for any patterns:

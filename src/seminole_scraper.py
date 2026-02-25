@@ -3,7 +3,6 @@ import logging
 import os
 import asyncio
 from playwright.async_api import async_playwright
-from datetime import datetime
 from bs4 import BeautifulSoup
 from playwright.async_api import TimeoutError as PlaywrightTimeout
 import time
