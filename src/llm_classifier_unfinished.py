@@ -1,17 +1,6 @@
 """
 doc_type Normalization Layer
 =============================
-Streams a JSONL file record by record, applies a full 7-step normalization
-pipeline to the doc_type field, and reports deduplication results.
-
-Steps:
-  1. Case standardization       → uppercase everything
-  2. Punctuation removal        → strip . - / & , ( ) # *
-  3. Stop word removal          → drop OF AND THE OR FOR TO A
-  4. Whitespace collapsing      → strip + collapse double spaces
-  5. Alphabetical word sorting  → fix word-order inversions
-  6. Abbreviation expansion     → expand known shorthand
-  7. Suffix stemming            → reduce plural/verb forms to root
 """
 
 import os
@@ -271,7 +260,7 @@ def run_on_file(filepath: str):
         print(f"  Collapsed groups ({len(collapsed)} normalized forms with 2+ raw variants):")
         print("  " + "-" * 55)
         for norm, raws in sorted(collapsed.items(), key=lambda x: -len(x[1])):
-            print(f"\n  ✦ '{norm}'  ← {len(raws)} variants:")
+            print(f"\n     '{norm}'  ← {len(raws)} variants:")
             for r in raws:
                 count = results["raw_counts"].get(r, 0)
                 print(f"      • {r:<35} ({count:,} records)")

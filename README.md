@@ -78,7 +78,7 @@ pip install playwright beautifulsoup4
 playwright install chromium
 playwright install chromium`
 
-**Run the scraper:**
+### Run the scraper:
 python src/seminole_scraper.py
 
 Enter a name when prompted:
@@ -196,3 +196,33 @@ MetricValueExtraction speed (parsing only)~15,000 records/minEnd-to-end speed (i
 
 - The scraper runs in headed mode (headless=False) by default so browser interactions are visible. To run headlessly, change headless=False to headless=True in scrape().
 - Logging is set to DEBUG level by default, printing every step to the console. To reduce noise in production, change logging.DEBUG to logging.INFO in main().
+
+
+
+# Task 3
+
+I did not finish, but the first part of normalizing the data before sendin it to a model is attached.
+the code streams the JSONL file and applies a 7-step normalization
+pipeline to the doc_type field, and reports deduplication results.
+
+## Steps:
+    1. Case standardization       → uppercase everything
+    2. Abbreviation expansion     → expand known shorthand
+    3. Punctuation removal        → strip . - / & , ( ) # *
+    4. Stop word removal          → drop OF AND THE OR FOR TO A
+    5. Suffix stemming            → reduce plural/verb forms to root
+    6. Alphabetical word sorting  → fix word-order inversions
+    7. Whitespace collapsing      → strip + collapse double spaces
+
+## Result:
+Total records streamed : 13,886
+  Missing doc_type       : 9
+  Unique raw values      : 338
+  Unique after normalize : 268
+  Deduplication gain     : 20.7%
+
+## Notes:
+
+    Library stemmers are too aggresive, so i use a custom stemmer with whitelisted words.
+    The goal is just to collapse obvious duplicates cheaply, not to achieve perfect linguistic normalization
+    that tradeoff is worth it.
