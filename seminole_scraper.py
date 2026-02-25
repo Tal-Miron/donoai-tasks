@@ -161,7 +161,7 @@ async def scrape(name: str):
             except PlaywrightTimeout:
                 logging.error("Timed out waiting for results table to load")
                 return []
-            
+
             if PAGER_NO_CONTENT_LABEL in pager_label_text:
                 logging.info(f"No results found for '{name}'")
                 return []

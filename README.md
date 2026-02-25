@@ -34,13 +34,22 @@ All fields are cleaned through `ParsedRecord.from_row()` before processing. Empt
 ## Assumptions
 
 - bp prefixed instrument numbers are treated as a legitimate pattern.
-- Book numbers and pages may contain letters in some counties despite initial expectations, the script handles both numeric and alphanumeric formats.I have runned scripts to analyze the data and look for any patterns, but seems like book 
+- After checking, book numbers and pages may contain letters in some counties despite initial expectations, the script handles both numeric and alphanumeric formats.
 - Date comparison uses the record's date truncated to `YYYY-MM-DD` (first 10 characters of the ISO string).
 - A "suspicious" date is defined as anything before 1900 or after today's date.
 - All uniques of doc_type and book pattern fit in memmory
 
+## Answeres to Question - Doc catagory & type
+doc_type and doc_category do relate. i have created a heat map between the two vaules.
+seems like doc types that explicitly contain 'DEED' are catagorized as DEEDs (eg REL DEED).
+all other doc types are have other catagories.
 
-
+## Additional Notes
+I have runned scripts to analyze some of the data and look for any patterns:
+1. I wasnt sure hoe to format the book json and what type of data the code needs ro handle (nummeric or also alphabetic).
+After searching for any patterns between book numbers/page numbers i have concluded that page numbers are supposed to be numeric - yet some values contain alphabetic chars because there's a mistake in reading the page number.
+some values are very high numbers for the same reason (192194 readed from '192-194)
+2. there is no pattern between book number and page number
 
 
 
@@ -121,6 +130,7 @@ After clicking Next Page, `wait_for_selector("td[role='gridcell']")` alone was n
 ## Edge Cases
 
 - No results:  Pager label is checked for `"0 - 0 of 0"` before any parsing. Returns empty list immediately. 
+- Few rsults: Pager label is checked to be less than 30, adjusting scraping actions.
 - Page load timeout: Wrapped in `try/except PlaywrightTimeout`. Logs error, returns empty list. 
 - Table load timeout: separate timeout guard on the loading spinner. 
 - Unparseable date: `parse_date()` catches `ValueError`, logs a warning, returns `null` for that field. 
@@ -138,19 +148,31 @@ A 0.5s delay is applied before each Next Page click. This keeps the scraper resp
 
 ## Test Results
 
-| Name | Type | Records Found | Pages | Time |
-|------|------|--------------|-------|------|
-| `<!-- NAME -->` | Common | `<!-- COUNT -->` | `<!-- PAGES -->` | `<!-- TIME -->s` |
-| `<!-- NAME -->` | Medium | `<!-- COUNT -->` | `<!-- PAGES -->` | `<!-- TIME -->s` |
-| `<!-- NAME -->` | Rare | `<!-- COUNT -->` | 1 | `<!-- TIME -->s` |
+1. For the name 'TAL':
+- 2000 records were written (0.09s for a record)
+- in total: 187s  ()
+- as the site was slow, until the page loaded (accept btn pressed and filled in search): 116s
+- table took around 60s to load, so the extracting og the table data itself was very fast and took only 8s (0.004s for a record)
+
+2. For the name 'Y7#7DJD8DJD':
+- 0 records were written (no result)
+- in total: 215s
+- until the page loaded: 134s
+- until table loaded: 213s
+
+3. For the name 'TALAA,KENNETH STEPHEN JOHN'
+- 2 records were written
+- in total: 162s
+- until page loaded: 161s
+
 
 ---
 
 ## Estimated Performance
 
-`<!-- e.g. ~300 records/minute, based on NAME search (COUNT records in TIMEs) -->`
-
-
+Extraction speed (excluding server wait time) is approximately 15,000 records/minute (~0.004s per record), based on the TAL search which extracted 2,000 records in ~8s.
+However, end-to-end throughput is bottlenecked entirely by the county server. Real-world performance including server wait time is closer to 640 records/minute (2,000 records in 187s total).
+MetricValueExtraction speed (parsing only)~15,000 records/minEnd-to-end speed (inc. server wait)~640 records/minAvg. server page load time2–3 minutesRecords per page60 (max)
 
 ## Additional Notes
 
