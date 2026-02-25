@@ -6,6 +6,10 @@ Run:
 python src/pattern_analyzer.py
 Output will be written to `outputs/county_patterns.json`.
 
+### Dependencies & Requirements
+**Python version:** 3.10+
+All dependencies are part of the Python standard library — no `pip install` required.
+
 ## How It Works
 
 The script streams the JSONL file line by line, never loading the entire file into memory. 
@@ -61,7 +65,20 @@ A scraper for the Seminole County Official Records system that searches by name 
 
 ## How to Run
 
-Run the scraper:
+### Dependencies & Requirements
+
+**Python version:** 3.10+
+
+Third-party packages (install required):
+`playwright`
+`beautifulsoup4`
+
+**Install:**
+pip install playwright beautifulsoup4
+playwright install chromium
+playwright install chromium`
+
+**Run the scraper:**
 python src/seminole_scraper.py
 
 Enter a name when prompted:
